@@ -67,16 +67,6 @@ class PostController {
         return Post.findAll();
     }
 
-    async validarToken(token) {
-        try {
-            // Verifica se o token é válido e retorna o payload
-            const payload = jwt.verify(token, JWT_SECRET_KEY);
-            return payload;
-        } catch (error) {
-
-            throw new Error('Token inválido');
-        }
     }
-}
 
 module.exports = new PostController();
